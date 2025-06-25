@@ -1,0 +1,16 @@
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+public class Solution {
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    float n=sc.nextFloat();
+    int c=sc.nextInt();
+    int p=sc.nextInt(); 
+    int k=sc.nextInt();
+    System.out.println((int)Math.floor(n));
+    System.out.println((int)Math.ceil(n));
+    System.out.println((int)Math.sqrt(c));
+    System.out.println((int)Math.pow(p,k));
+    }
+}
