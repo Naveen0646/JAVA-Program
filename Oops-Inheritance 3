@@ -1,0 +1,38 @@
+import java.util.*;
+class Employee {
+    String name;
+    String jobTitle;
+    float salary;
+    Employee(String name, String jobTitle, float salary) {
+        this.name = name;
+        this.jobTitle = jobTitle;
+        this.salary = salary;
+    }
+    void updateSalary(float hikePercent) {
+        salary = salary + (salary * hikePercent / 100);
+    }
+    void displayDetails(float initialSalary) {
+        System.out.println("Dear Employee,Here Your Details!!!!");
+        System.out.printf("Employee Name:%s\n", name);
+        System.out.printf("Employee Role:%s\n", jobTitle);
+        System.out.printf("Employee Salary:%.2f\n", initialSalary);
+        System.out.printf("After hike,Employee Salary:%.2f\n", salary);
+    }
+}
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String name = sc.nextLine();
+        String jobTitle = sc.nextLine();
+        int initialSalary = sc.nextInt();
+        int hikePercent = sc.nextInt();
+
+        if (initialSalary < 50000) {
+            System.out.println("Dear Employee,Salary Increment only for above 50000k.");
+        } else {
+            Employee emp = new Employee(name, jobTitle, initialSalary);
+            emp.updateSalary(hikePercent);
+            emp.displayDetails(initialSalary);
+        }
+    }
+}
